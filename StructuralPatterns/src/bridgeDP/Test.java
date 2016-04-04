@@ -2,11 +2,22 @@ package bridgeDP;
 
 public class Test {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		DataEngine engine = new LocalDataEngine(new MsSqlDBConnection());
+        engine.Open("connStr");
+        engine.Execute("select * from records");
+
+        engine = new LocalDataEngine(new OracleDBConnection());
+        engine.Open("connStr");
+        engine.Execute("select * from records");
+
+        engine = new ServerDataEngine(new MsSqlDBConnection());
+        engine.Open("connStr");
+        engine.Execute("select * from records");
+
+        engine = new ServerDataEngine(new OracleDBConnection());
+        engine.Open("connStr");
+        engine.Execute("select * from records");
 
 	}
 

@@ -6,7 +6,11 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Canli canli = new Insan();
+        canli.HayatDongusu();
+
+        canli = new Kedi();
+        canli.HayatDongusu();
 
 	}
 

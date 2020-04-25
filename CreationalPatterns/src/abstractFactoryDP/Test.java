@@ -6,30 +6,25 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		IHardwareFactory hardwareFactory = null;
+        IHardwareFactory hardwareFactory = null;
 
-        hardwareFactory = new HighPerformanceHardwareFactory();
+        hardwareFactory = new HardwareFactoryHighPrice();
 
         IProcessor processor = hardwareFactory.ProcessorModel();
-        IRam ram = hardwareFactory.RAMModel();
-        IHdd hdd = hardwareFactory.HDDModel();
+        IRAM ram = hardwareFactory.RAMModel();
 
         processor.IntegrateProcessor();
         ram.IntegrateRAM();
-        hdd.IntegrateHDD();
 
         System.out.println("-----------------------");
 
-        hardwareFactory = new FairPriceHardwareFactory();
+        hardwareFactory = new HardwareFactoryLowPrice();
 
         processor = hardwareFactory.ProcessorModel();
         ram = hardwareFactory.RAMModel();
-        hdd = hardwareFactory.HDDModel();
 
         processor.IntegrateProcessor();
         ram.IntegrateRAM();
-        hdd.IntegrateHDD();
-
 	}
 
 }

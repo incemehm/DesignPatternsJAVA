@@ -6,27 +6,33 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Garson garson = new Garson();
 
-        // Adana Kebap istiyoruz, kurulum nesnesini yarat.
-        Usta usta = new AdanaUsta();
+        ConstructionMaster constructionMaster;
+        ProjectOwner owner = new ProjectOwner();
 
-        // Yönetici sýnýfa kurulum nesnesini ver. Adana Kebap ustasýný (kurucusunu) seçtik
-        garson.SetUstaAndCreateKebap(usta);
-        
-        // Kebap yapýldý ve hazýr
-        Kebap kebap = garson.GetKebap();
+        // Hire a beginner construction master
+        constructionMaster = new BeginnerConstMaster();
 
-        System.out.println(kebap);
+        // Build house with a beginner construction master
+        owner.BuildHouse(constructionMaster);
 
-        // Þimdi de Manisa Kebabý istedik.
-        usta = new ManisaUsta();
+        System.out.println(constructionMaster.GetHouse());
 
-        garson.SetUstaAndCreateKebap(usta);
-        kebap = garson.GetKebap();
+        // Hire a mid-level construction master
+        constructionMaster = new MidLevelConstMaster();
 
-        System.out.println(kebap);
+        // Build house with a mid-level construction master
+        owner.BuildHouse(constructionMaster);
 
+        System.out.println(constructionMaster.GetHouse());
+
+        // Hire a experienced construction master
+        constructionMaster = new ExperiencedConstMaster();
+
+        // Build house with a experienced construction master
+        owner.BuildHouse(constructionMaster);
+
+        System.out.println(constructionMaster.GetHouse());
 	}
 
 }

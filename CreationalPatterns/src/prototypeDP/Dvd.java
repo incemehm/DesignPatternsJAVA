@@ -1,6 +1,6 @@
 package prototypeDP;
 
-public class Dvd implements Cloneable, IDisc {
+public class Dvd extends Disc implements Cloneable{
 	
 	public String Name;
     public Object Content;
@@ -12,11 +12,11 @@ public class Dvd implements Cloneable, IDisc {
     }
 
 	@Override
-	public IDisc Clone() 
+	public Disc Clone()
 	{	
 		try 
 		{
-		return ( IDisc ) super.clone();
+		return (Disc) super.clone();
 		} 
 		catch (final CloneNotSupportedException e ) 
 		{

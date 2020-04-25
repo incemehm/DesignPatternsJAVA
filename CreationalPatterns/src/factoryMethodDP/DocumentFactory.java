@@ -2,7 +2,7 @@ package factoryMethodDP;
 
 public class DocumentFactory 
 {
-	 public IDocument CreateVersion(String docType) // Factory Method budur. Nesne yaratma sorumluluðunu alýr.
+	 public IDocument CreateVersion(String docType) throws Exception //Factory method
      {
          if (docType.equals("PDF"))
          {
@@ -14,7 +14,7 @@ public class DocumentFactory
          }
          else
          {
-             return null;
+             throw new Exception("Wrong Choice!");
          }
      }
 }

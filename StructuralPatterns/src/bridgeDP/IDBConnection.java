@@ -2,6 +2,7 @@ package bridgeDP;
 
 public interface IDBConnection 
 {
-	 void ExecuteSQL(String sql);
-     void OpenConnection(String connStr);
+	void ExecuteQuery(String query);
+
+    void OpenConnection(String connStr);
 }

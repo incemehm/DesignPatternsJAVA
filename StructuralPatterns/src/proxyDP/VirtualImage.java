@@ -2,18 +2,16 @@ package proxyDP;
 
 public class VirtualImage implements IImage {
 
-	 private IImage image;
+	private IImage image;
 	
 	@Override
-	public void LoadImage() 
+	public void Display()
 	{
 		if (image == null)
-        {
-            image = new RealImage();
-            image.LoadImage();
-        }
+		{
+			image = new RealImage();
+		}
 
-		System.out.println("Loaded image is being displayed...");
+		image.Display();
 	}
-
 }

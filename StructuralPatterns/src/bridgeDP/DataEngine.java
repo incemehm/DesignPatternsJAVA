@@ -1,12 +1,20 @@
 package bridgeDP;
 
 public abstract class DataEngine {
-	protected IDBConnection dbConnection;
+
+    protected IDBConnection dbConnection;
+
     public DataEngine(IDBConnection dbConn)
-    {
-        dbConnection = dbConn;
-    }
+     {
+         dbConnection = dbConn;
+     }
     
-    public abstract void Execute(String sql);
-    public abstract void Open(String connStr);
+    public void Execute(String query)
+    {
+        dbConnection.ExecuteQuery(query);
+    }
+    public void Open(String connStr)
+    {
+        dbConnection.OpenConnection(connStr);
+    }
 }

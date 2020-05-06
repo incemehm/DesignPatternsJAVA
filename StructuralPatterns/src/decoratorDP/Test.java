@@ -7,18 +7,17 @@ public class Test {
 	 */
 	public static void main(String[] args) 
 	{
-		 IMakarna makarna = new SadeMakarna();
-         makarna.ServisEt();
+        IMeal meal = new Meal();
+        meal.Serve();
 
-         makarna = new SosluMakarna(new SadeMakarna());
-         makarna.ServisEt();
+        meal = new SaucyMeal(new Meal());
+        meal.Serve();
 
-         makarna = new PeynirliMakarna(new SadeMakarna());
-         makarna.ServisEt();
+        meal = new SaltyMeal(new Meal());
+        meal.Serve();
 
-         makarna = new PeynirliMakarna(new SosluMakarna(new SadeMakarna()));
-         makarna.ServisEt();
-
+        meal = new SaltyMeal(new SaucyMeal(new Meal()));
+        meal.Serve();
 	}
 
 }

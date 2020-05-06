@@ -6,12 +6,12 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Priz priz = new Priz();
-        priz.Connect();
+		Socket socket = new Socket();
+        socket.Connect();
 
-        priz = new PrizAdapter();
-        priz.Connect();
+		EnglishSocket englishSocket = new EnglishSocket();
 
+		socket = new SocketAdapter(englishSocket);
+        socket.Connect();
 	}
-
 }

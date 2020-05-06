@@ -1,5 +1,12 @@
 package facadeDP;
 
 public class Ball {
-	public String Position = new String();
+	public int PositionX;
+
+	public int PositionY;
+
+	public Ball(int positionX, int positionY) {
+		PositionX = positionX;
+		PositionY = positionY;
+	}
 }

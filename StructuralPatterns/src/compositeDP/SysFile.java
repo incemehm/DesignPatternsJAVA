@@ -1,17 +1,18 @@
 package compositeDP;
 
 public class SysFile implements IFile {
-	private String Filename;
-	
-	 public SysFile(String fileName)
+
+	private String filename;
+
+	 public SysFile(String filename)
      {
-         Filename = fileName;
+		 this.filename = filename;
      }
 
 	@Override
 	public void GetName() 
 	{
-		System.out.println("Dosya Ýsmi: " + Filename);
+		System.out.println("Filename: " + filename);
 	}
 
 }

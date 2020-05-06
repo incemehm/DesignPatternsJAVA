@@ -3,7 +3,7 @@ package bridgeDP;
 public class Test {
 
 	public static void main(String[] args) {
-		DataEngine engine = new LocalDataEngine(new MsSqlDBConnection());
+		DataEngine engine = new LocalDataEngine(new MySQLDBConnection());
         engine.Open("connStr");
         engine.Execute("select * from records");
 
@@ -11,7 +11,7 @@ public class Test {
         engine.Open("connStr");
         engine.Execute("select * from records");
 
-        engine = new ServerDataEngine(new MsSqlDBConnection());
+        engine = new ServerDataEngine(new MySQLDBConnection());
         engine.Open("connStr");
         engine.Execute("select * from records");
 
@@ -20,5 +20,4 @@ public class Test {
         engine.Execute("select * from records");
 
 	}
-
 }

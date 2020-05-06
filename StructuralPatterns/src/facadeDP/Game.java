@@ -3,15 +3,15 @@ package facadeDP;
 public class Game {
 	public void KickOff()
     {
-        Ball ball = new Ball();
-        Team team = new Team();
+        Ball ball = new Ball(0,0);
+        Team team = new Team("Super Heroes");
 
-        ball.Position = "0,0";
-        team.Name = "Beþiktaþ JK";
-        team.AddPlayer(new Player("Gomez"));
-        team.AddPlayer(new Player("Tore"));
-        team.AddPlayer(new Player("Quaresma"));
-        team.StartWithPlayer(new Player("Olcay"));
-     
+        team.AddPlayer(new Player("SpiderMan"));
+        team.AddPlayer(new Player("SuperMan"));
+        team.AddPlayer(new Player("Batman"));
+        team.AddPlayer(new Player("Hulk"));
+        team.AddPlayer(new Player("IronMan"));
+
+        team.StartWithPlayer(team.GetPlayer("Hulk"));
     }
 }

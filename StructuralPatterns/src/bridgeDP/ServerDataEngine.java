@@ -7,16 +7,17 @@ public class ServerDataEngine extends DataEngine {
 	}
 
 	@Override
-	public void Execute(String sql) {
-		System.out.println("Serverda komut çalýþtýrýlýyor...");
-		dbConnection.ExecuteSQL(sql);
+	public void Execute(String query)
+	{
+		System.out.println("---- Server Data Engine ----");
+		super.Execute(query);
 	}
 
 	@Override
-	public void Open(String connStr) {
-		System.out.println("Servera baðlanýlýyor...");
-		dbConnection.OpenConnection(connStr);
-		
+	public void Open(String connStr)
+	{
+		System.out.println("---- Server Data Engine ----");
+		super.Open(connStr);
 	}
 
 }

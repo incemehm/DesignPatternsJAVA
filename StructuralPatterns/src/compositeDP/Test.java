@@ -6,8 +6,8 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		SysFile file1 = new SysFile("File 1");
+
+        SysFile file1 = new SysFile("File 1");
         SysFile file2 = new SysFile("File 2");
         SysFile file3 = new SysFile("File 3");
         SysFile file4 = new SysFile("File 4");
@@ -30,7 +30,7 @@ public class Test {
         folderManager.AddFile(file3);
         folderManager.AddFile(folder2);
 
-        // Aðaç yapýsý üzerinde dolaþarak, tüm dosyalarýn bilgileri yazýlýr.
+        // Iterates over tree and gets names.
         folderManager.GetName();
 
 	}

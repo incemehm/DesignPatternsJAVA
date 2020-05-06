@@ -1,5 +1,5 @@
 package proxyDP;
 
 public interface IImage {
-	 void LoadImage();
+	void Display();
 }

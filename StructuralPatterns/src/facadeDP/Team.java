@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-	public String Name = new String();
+
+    String Name;
 	List<Player> Players = new ArrayList<Player>();
-	
-	public void AddPlayer(Player player)
+
+    public Team(String name) {
+        Name = name;
+    }
+
+    public void AddPlayer(Player player)
     {
         Players.add(player);
     }
@@ -15,5 +20,10 @@ public class Team {
 	public void StartWithPlayer(Player player)
     {
         System.out.println(player.getName() + " kicked off. Game Started!");
+    }
+
+    public Player GetPlayer(String name)
+    {
+        return Players.stream().filter(x -> x.getName().equals(name)).findFirst().orElse(null);
     }
 }

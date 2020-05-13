@@ -7,14 +7,13 @@ public class Test {
 	 */
 	public static void main(String[] args) 
 	{
-		Bildirim bildirim = new Bildirim();
+		Notification notification = new Notification();
 
-        bildirim.TakipciEkle(new TwitterTakipci());
-        bildirim.TakipciEkle(new TwitterTakipci());
-        bildirim.TakipciEkle(new BlogTakipci());
+		notification.AddFollower(new TwitterFollower());
+		notification.AddFollower(new TwitterFollower());
+		notification.AddFollower(new BlogFollower());
 
-        bildirim.TweetAt("Ýlk tweet!");
-
+		notification.TweetSomething("First tweet!");
 	}
 
 }

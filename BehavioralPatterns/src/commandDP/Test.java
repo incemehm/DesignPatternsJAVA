@@ -7,10 +7,24 @@ public class Test {
 	 */
 	public static void main(String[] args) {
 		Robot robot = new Robot();
-        UzaktanKumanda kumanda = new UzaktanKumanda(new IleriKomut(robot), new GeriKomut(robot));
-        kumanda.IleriGit(5);
-        kumanda.GeriGit(3);
-        kumanda.IleriGit(8);
+
+		RemoteControl remoteControl = new RemoteControl(
+				new ForwardCommand(robot),
+				new BackCommand(robot),
+				new RightCommand(robot),
+				new LeftCommand(robot));
+
+		System.out.println("Robot coordinates: X => " + robot.PositionX + ", Y => " + robot.PositionY);
+
+		remoteControl.MoveForward(5);
+		remoteControl.MoveRight(3);
+		remoteControl.MoveForward(3);
+		remoteControl.MoveLeft(8);
+		remoteControl.MoveBack(3);
+		remoteControl.MoveRight(2);
+
+		System.out.println("Robot coordinates: X => " + robot.PositionX + ", Y => " + robot.PositionY);
+
 
 	}
 

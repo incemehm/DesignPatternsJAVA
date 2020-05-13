@@ -7,14 +7,13 @@ public class Test {
 	 */
 	public static void main(String[] args) 
 	{
-		Hava hava = new Hava();
-        hava.Giyin();
+		Weather weather = new Weather();
+		weather.WearSomething();
 
-        hava.DurumDegistir(new YagmurluHava());
-        hava.Giyin();
+		weather.ChangeWeatherState(new RainyWeather());
+		weather.WearSomething();
 
-        hava.DurumDegistir(new KarliHava());
-        hava.Giyin();
+		weather.ChangeWeatherState(new SnowyWeather());
+		weather.WearSomething();
 	}
-
 }

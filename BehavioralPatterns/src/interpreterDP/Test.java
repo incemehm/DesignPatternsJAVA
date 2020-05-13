@@ -9,38 +9,30 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		Takim takim = new Takim(); 
-		takim.Form = "GGBMGG"; 
-		takim.Puan = 0;
 
-        List<ISonuc> sonuclar = new ArrayList<ISonuc>();
+        String form = "WWDLDWL";
 
-        for (final char c : takim.Form.toCharArray())
+        List<IResult> results = new ArrayList<IResult>();
+
+        for (final char c : form.toCharArray())
         {
             switch (c)
             {
-                case 'G':
-                    sonuclar.add(new Galibiyet());
+                case 'W':
+                    results.add(new Win());
                     break;
-                case 'B':
-                    sonuclar.add(new Beraberlik());
+                case 'D':
+                    results.add(new Draw());
                     break;
-                case 'M':
-                    sonuclar.add(new Maglubiyet());
+                case 'L':
+                    results.add(new Lost());
                     break;
                 default:
                     break;
             }
         }
 
-        for (ISonuc sonuc : sonuclar)
-        {
-            sonuc.PuanHesapla(takim);
-        }
-
-        System.out.println("Form Durumu:" + takim.Form + ", Puan: " + takim.Puan);
-
+        for (IResult result : results)
+            result.CalculatePoint();
 	}
-
 }

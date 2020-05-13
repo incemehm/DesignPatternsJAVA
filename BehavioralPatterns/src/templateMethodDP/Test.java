@@ -6,12 +6,10 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Canli canli = new Insan();
-        canli.HayatDongusu();
+		Race race = new BicycleRace();
+		race.TakeTour();
 
-        canli = new Kedi();
-        canli.HayatDongusu();
-
+		race = new CarRace();
+		race.TakeTour();
 	}
-
 }

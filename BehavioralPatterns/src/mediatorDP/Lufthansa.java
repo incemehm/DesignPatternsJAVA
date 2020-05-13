@@ -1,23 +1,29 @@
 package mediatorDP;
 
-public class Lufthansa extends HavayoluSirketi {
-
-	public Lufthansa(Kule kule) {
-		 super(kule);
-		 kule.LufthansaLisansVer(this);
+public class Lufthansa extends Airline {
+	public Lufthansa(IAirport airport, String flightCode)
+	{
+		super(airport, flightCode);
+		airport.RegisterAirline(this);
 	}
 
 	@Override
-	public void InisIzniVer() 
+	public void RequestLanding()
 	{
-		 kule.LufthansaInisIzniVer();
-		 System.out.println("Lufthansa iniþ izni verildi.");
+		System.out.println("Lufthansa (" + this.getFlightCode() + ") requests landing permission!");
+
+		airport.ManageLanding(this.getFlightCode());
 	}
 
 	@Override
-	public void Beklet() 
+	public void Allow()
 	{
-		System.out.println("Lufthansa bekletiliyor.");
+		System.out.println("Lufthansa (" + this.getFlightCode() + ") allowed!");
 	}
 
+	@Override
+	public void Hold()
+	{
+		System.out.println("Lufthansa (" + this.getFlightCode() + ") on hold!");
+	}
 }

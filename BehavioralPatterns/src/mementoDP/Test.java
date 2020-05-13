@@ -6,18 +6,28 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		WindowsStatus status = new WindowsStatus(true, "White");
-        ComputerMemory memory = new ComputerMemory();
-        memory.WindowsState = status.Save();
-        System.out.println(status.theme);
 
-        status.isActive = false;
-        status.theme = "Black";
-        System.out.println(status.theme);
+        Monitor monitor = new Monitor();
 
-        status.Restore(memory.WindowsState);
-        System.out.println(status.theme);
+        ScreenSaver screenSaver = new ScreenSaver("Colorful Spring", 60);
+
+        monitor.LastActiveState = screenSaver.Save();
+
+        System.out.println("Current theme: " + screenSaver.Theme);
+        System.out.println("Last theme: " + monitor.LastActiveState.Theme);
+        System.out.println("-----------------------");
+
+        screenSaver.Theme = "Black Clouds";
+
+        System.out.println("Current theme: " + screenSaver.Theme);
+        System.out.println("Last theme: " + monitor.LastActiveState.Theme);
+        System.out.println("-----------------------");
+
+        System.out.println("Restoring last theme!");
+        screenSaver.Restore(monitor.LastActiveState);
+
+        System.out.println("Current theme: " + screenSaver.Theme);
+        System.out.println("Last theme: " + monitor.LastActiveState.Theme);
+        System.out.println("-----------------------");
 	}
-
 }

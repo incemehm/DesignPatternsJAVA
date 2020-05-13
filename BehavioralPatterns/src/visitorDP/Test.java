@@ -6,14 +6,16 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 Samsung s3 = new Samsung();
-         s3.GecisYap(new _3GBaglanti());
-         s3.GecisYap(new _4GBaglanti());
+		Museum museum = new Museum();
+		Gallery gallery = new Gallery();
 
-         Sony xperia = new Sony();
-         xperia.GecisYap(new _3GBaglanti());
-         xperia.GecisYap(new _4GBaglanti());
+		IVisitor studentVisitor = new StudentVisitor();
+		IVisitor standartVisitor = new StandartVisitor();
 
+		museum.Accept(studentVisitor);
+		gallery.Accept(studentVisitor);
+
+		museum.Accept(standartVisitor);
+		gallery.Accept(standartVisitor);
 	}
-
 }

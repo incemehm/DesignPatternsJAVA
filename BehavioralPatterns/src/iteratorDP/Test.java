@@ -6,20 +6,20 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Rehber rehber = new Rehber();
-        rehber.Ekle(new Kisi("mehmet",3));
-        rehber.Ekle(new Kisi("ahmet",5));
-        rehber.Ekle(new Kisi("murat", 7));
-        rehber.Ekle(new Kisi("aykut", 9));
 
+        PhoneBook<Person> phoneBook = new PhoneBook<Person>();
+        phoneBook.Add(new Person("fatih",333));
+        phoneBook.Add(new Person("ahmet",555));
+        phoneBook.Add(new Person("murat",777));
+        phoneBook.Add(new Person("aykut",999));
 
-        IKisiIterator iterator = rehber.GetIterator();
-        while (iterator.HasItem())
+        Iterator<Person> iterator = phoneBook.GetIterator();
+
+        while (iterator.MoveNext())
         {
-            System.out.println("Ad: " + iterator.Current().Ad + ", Numara: " + iterator.Current().Numara);
-            iterator.Next();
+            System.out.printf("Name: {%s}, Number:{%s}", iterator.Current().Name, iterator.Current().Number);
+            System.out.println();
         }
-
 	}
 
 }

@@ -3,21 +3,21 @@ package bridgeDP;
 public class Test {
 
 	public static void main(String[] args) {
-		DataEngine engine = new LocalDataEngine(new MySQLDBConnection());
-        engine.Open("connStr");
-        engine.Execute("select * from records");
+        DBClient client = new ManagementStudio(new SQLConnection());
+        client.Open("connStr");
+        client.Execute("select * from records");
 
-        engine = new LocalDataEngine(new OracleDBConnection());
-        engine.Open("connStr");
-        engine.Execute("select * from records");
 
-        engine = new ServerDataEngine(new MySQLDBConnection());
-        engine.Open("connStr");
-        engine.Execute("select * from records");
+        client = new ManagementStudio(new OracleConnection());
+        client.Open("connStr");
+        client.Execute("select * from records");
 
-        engine = new ServerDataEngine(new OracleDBConnection());
-        engine.Open("connStr");
-        engine.Execute("select * from records");
+        client = new Toad(new SQLConnection());
+        client.Open("connStr");
+        client.Execute("select * from records");
 
+        client = new Toad(new OracleConnection());
+        client.Open("connStr");
+        client.Execute("select * from records");
 	}
 }

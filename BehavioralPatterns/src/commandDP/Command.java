@@ -10,9 +10,9 @@ class ForwardCommand implements ICommand {
 	}
      
 	@Override
-	public void Move(int unit) {
-		robot.PositionX += unit;
-		System.out.println("Robot has moved forward " + unit + " unit");
+	public void Move() {
+		robot.PositionX += 1;
+		System.out.println("Robot has moved forward");
 	}
 }
 
@@ -26,9 +26,9 @@ class BackCommand implements ICommand {
 	}
 
 	@Override
-	public void Move(int unit) {
-		robot.PositionX -= unit;
-		System.out.println("Robot has moved back " + unit + " unit");
+	public void Move() {
+		robot.PositionX -= 1;
+		System.out.println("Robot has moved back");
 	}
 }
 
@@ -42,9 +42,9 @@ class RightCommand implements ICommand {
 	}
 
 	@Override
-	public void Move(int unit) {
-		robot.PositionY += unit;
-		System.out.println("Robot has moved right " + unit + " unit");
+	public void Move() {
+		robot.PositionY += 1;
+		System.out.println("Robot has moved right");
 	}
 }
 
@@ -58,8 +58,8 @@ class LeftCommand implements ICommand {
 	}
 
 	@Override
-	public void Move(int unit) {
-		robot.PositionY -= unit;
-		System.out.println("Robot has moved left " + unit + " unit");
+	public void Move() {
+		robot.PositionY -= 1;
+		System.out.println("Robot has moved left");
 	}
 }

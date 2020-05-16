@@ -9,8 +9,5 @@ public abstract class MealDecorator implements IMeal {
         this.meal = meal;
     }
 
-    public void Serve()
-    {
-        meal.Serve();
-    }
+    public abstract void Serve();
 }

@@ -11,6 +11,6 @@ public class SaltyMeal extends MealDecorator {
 	{
 		System.out.println("Salty meal is being served...");
 
-		super.Serve();
+		meal.Serve();
 	}
 }
